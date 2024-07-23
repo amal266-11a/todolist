@@ -1,3 +1,10 @@
+<script lang="ts">
+import dayjs from 'dayjs';
+import 'dayjs/locale/ar';
+
+dayjs().locale('ar');
+
+</script>
 <div class=" p-16">
 	<header class=" flex justify-between">
 		<div>
@@ -6,11 +13,11 @@
 					
 			</h4>
 			<h2 class=" text-xs text-surface-900/50 ">
-				اليوم ،السبت 14\محرم 1446
+				{dayjs().format('اليوم, dddd D MMM YYYY')}
 			</h2>
 		</div>
 		
-		<div class=" bg-pink-600 w-24 h-24">
+		<div class=" bg-slate-200 w-20 h-26">
 
 		</div>
 	</header>
