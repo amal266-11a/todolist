@@ -2,8 +2,12 @@
     import Header from "$lib/Header.svelte" ;
   </script>
 
-<div class=" p-16">
+<div class=" p-16 flex flex-col gap-9">
 <Header />
-<!--component-->	
+<div class="input-group input-group-divider flex justify-between">
+	
+	<input class=" flex-1 !bg-white" type="search" placeholder="ادخل المهمة...." />
+	<button class="variant-glass-tertiary">إضافة</button>
+</div>
 </div>
 
