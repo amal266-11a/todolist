@@ -20,13 +20,13 @@ const popupCombobox: PopupSettings = {
     
     <header class=" flex justify-between">
         <div>
-            <h4 class=" text-xl text-yellow-950 mb-2">
+            <h4 class=" text-3xl text-yellow-950 mb-2">
                 {period} الخير👋
                     
             </h4>
-            <h2 class=" text-xs text-surface-900/50 ">
+            <h4 class=" text-lg text-surface-900/50 ">
                 {dayjs().format('اليوم, dddd D MMM YYYY')}
-            </h2>
+            </h4>
         </div>
         
         
@@ -36,7 +36,7 @@ const popupCombobox: PopupSettings = {
 </button>
 
 <div class="card w-48 shadow-xl py-2" data-popup="popupCombobox">
-	<ListBox rounded="rounded-none">
+	<ListBox rounded="rounded-none" active=" bg-neutral-400">
 		<ListBoxItem bind:group={comboboxValue} name="medium" value="جميع المهام">جميع المهام</ListBoxItem>
 		<ListBoxItem bind:group={comboboxValue} name="medium" value="مهام اليوم">مهام اليوم</ListBoxItem>
 		
