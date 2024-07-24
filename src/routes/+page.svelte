@@ -1,15 +1,15 @@
 <script lang="ts">
 import dayjs from 'dayjs';
 import 'dayjs/locale/ar';
-
-dayjs().locale('ar');
+let period=dayjs().format('a')=='م'?'مساء':'صباح';
+dayjs.locale('ar');
 
 </script>
 <div class=" p-16">
 	<header class=" flex justify-between">
 		<div>
 			<h4 class=" text-xl text-yellow-950 mb-2">
-				صباح الخير👋
+				{period} الخير👋
 					
 			</h4>
 			<h2 class=" text-xs text-surface-900/50 ">
