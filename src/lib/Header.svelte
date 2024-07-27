@@ -20,17 +20,17 @@ const popupCombobox: PopupSettings = {
     
     <header class=" flex justify-between">
         <div>
-            <h4 class=" text-3xl text-yellow-950 mb-2">
+            <h4 class=" text-3xl lg:text-xl   text-yellow-950 mb-2">
                 {period} الخير👋
                     
             </h4>
-            <h4 class=" text-lg text-surface-900/50 ">
+            <h4 class=" text-lg sm:text-sm text-surface-900/50 ">
                 {dayjs().format('اليوم, dddd D MMM YYYY')}
             </h4>
         </div>
         
         
-<button class="btn variant-filled w-48 justify-between" use:popup={popupCombobox}>
+<button class="btn variant-filled w-36 px-2 justify-between" use:popup={popupCombobox}>
 	<span >{comboboxValue }</span>
 	<span class=" !m-0"><svg xmlns="http://www.w3.org/2000/svg" class=" w-6 rotate-90 h-fit py-1" viewBox="0 0 24 24"><path fill="currentColor" d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82"/></svg></span>
 </button>
