@@ -9,9 +9,9 @@ declare namespace App{
 	// interface Platform {}
 }
 declare global{
-	interface Task{
+	 interface Task{
 	title: string;
 	assignedDate: string;
 	isDone: boolean
-	}
-}	
+	};
+}
