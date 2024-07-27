@@ -1,14 +1,17 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
+import type { Dayjs } from "dayjs";
 // and what to do when importing types
-declare global  {
-interface Task{
-	title:string;
-	assignedDate:string;
-	isDone:boolean;
-};	
-}
-// interface Locals {}
-	// interface PageData {}
+
+declare namespace App{
+// interface PageData {}
 	// interface Error {}
 	// interface Platform {}
+}
+declare global{
+	interface Task{
+	title: string;
+	assignedDate: string;
+	isDone: boolean
+	}
+}	

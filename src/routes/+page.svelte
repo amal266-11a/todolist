@@ -1,19 +1,21 @@
 <script lang="ts">
     import Header from "$lib/Header.svelte" ;
     import {tasks} from "$lib/stores/tasks";
-import dayjs from "dayjs";
-    let title ="";
+    import dayjs from "dayjs";
+    
+    let title = ""; 
     function addTask(){
-      tasks.update((currentTask)=>{
-currentTask.push({title,
-  assignedDate: dayjs(),
+      tasks.update((currentTasks)=>{
+currentTasks.push({
+  title,
+  assignedDate: dayjs().format("YYYY-MM-DDTHH:mm") ,
   isDone: false,
-})
-return currentTask;
+});
+return currentTasks;
       });
       title = "";
     }
-    $: console.log($tasks);
+    
   </script>
 
 <div class=" p-16 flex flex-col gap-9">
