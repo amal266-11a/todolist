@@ -12,6 +12,6 @@ declare global{
 	 interface Task{
 	title: string;
 	assignedDate: string;
-	isDone: boolean
+	isDone: boolean;
 	};
 }

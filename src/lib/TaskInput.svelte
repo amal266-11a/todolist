@@ -6,7 +6,7 @@
       tasks.update((currentTasks)=>{
 currentTasks.push({
   title,
-  assignedDate: dayjs().format("YYYY-MM-DDTHH:mm") ,
+  assignedDate: dayjs().format() ,
   isDone: false,
 });
 return currentTasks;
