@@ -1,22 +1,38 @@
 <script lang="ts">
 import dayjs from "dayjs";
- import {tasks} from "$lib/stores/tasks" ; 
+  
  import relativeTime from 'dayjs/plugin/relativeTime'
 import TaskListItems from "$lib/TaskListItems.svelte";
+    import { filter } from "@skeletonlabs/skeleton";
+    import { tasks } from "./stores/tasks";
+    import { fade } from "svelte/transition";
+
  dayjs.extend(relativeTime);
 </script>
-<ol class=" gap-2 flex flex-col">
+
+{#if $tasks.length == 0}
+ <div class=" flex items-center justify-center h-[50dvh]">
+
+  لايوجد مهام
+ </div>
+
+{:else}
+{#if $tasks.filter((task) => !task.isDone).length > 0 }
+ <ol transition:fade class=" gap-2 flex flex-col">
   <h3>
     المهام المتبقيه
     <TaskListItems doneTask={false}/>
   </h3>
     
 </ol>
-
-<ol class=" gap-2 flex flex-col">
+{/if}
+{#if $tasks.filter((task) => task.isDone).length > 0 }
+<ol transition:fade  class=" gap-2 flex flex-col">
   <h3>
     المهام المكتمله
   </h3>
   <TaskListItems doneTask={true}/>
    
 </ol>
+{/if}
+{/if}

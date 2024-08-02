@@ -3,7 +3,7 @@
      import {tasks} from "$lib/stores/tasks" ; 
      import relativeTime from 'dayjs/plugin/relativeTime'
      import { slide } from 'svelte/transition';
-     
+     import {filter} from '$lib/stores/filter';
      dayjs.extend(relativeTime);
      export let doneTask:boolean;
      
@@ -33,10 +33,19 @@ response: (r: boolean) => {
 modalStore.trigger(modal);
  
  }
+ function applyFilter(filter: typeof $filter, task: Task): boolean{
+ switch(filter){
+  case "مهام اليوم":
+  return dayjs(task.assignedDate).unix() - dayjs().unix() <= 24*60*60; 
+  case "جميع المهام":
+    default:
+  return true;     
+ }
+ }
     </script>
 
 {#each $tasks as task}
-  {#if task.isDone==doneTask}
+  {#if task.isDone==doneTask && applyFilter( $filter, task)}
   <li
   transition:slide
   class=" bg-warning-800/10 p-2 rounded-lg flex justify-between items-center">

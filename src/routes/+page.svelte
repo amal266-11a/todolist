@@ -6,6 +6,11 @@
    
     
   </script>
+  <svelte:head>
+  <title>
+    متتبع المهام
+  </title>  
+  </svelte:head>
 
 <div class=" p-2 sm:p-4 md:p-8 lg:p-16 xl:p-32 pt-4 flex flex-col gap-9  max-w-screen-lg mx-auto">
 <Header />
